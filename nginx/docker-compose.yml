@@ -1,0 +1,20 @@
+# @Author: Noaghzil
+# @Date:   2023-04-24 01:12:51
+# @Last Modified by:   Noaghzil
+# @Last Modified time: 2023-04-24 01:13:06
+version: '3'
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      # - ./my-site.conf:/etc/nginx/conf.d/my-site.conf
+      # - ./my-site.crt:/etc/nginx/ssl/my-site.crt
+      - ./my-site.key:/etc/nginx/ssl/my-site.key
+      - ./logs:/var/log/nginx
+    restart: always
