@@ -1,0 +1,17 @@
+[mysqld]
+bind-address=0.0.0.0  # 允许所有IP地址访问MySQL服务
+port=3306             # MySQL服务监听的端口号
+character-set-server=utf8mb4  # 设置MySQL使用的字符集
+
+# InnoDB存储引擎配置
+default-storage-engine=InnoDB
+innodb_buffer_pool_size=256M  # 设置InnoDB缓存池大小
+innodb_file_per_table=1       # 每个表单独使用一个文件
+
+# 日志文件配置
+log_error=/var/log/mysql/error.log
+general_log_file=/var/log/mysql/general.log
+general_log=1
+
+# 套接字文件配置
+socket=/var/run/mysqld/mysqld.sock

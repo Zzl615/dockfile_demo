@@ -1,0 +1,17 @@
+# @Author: Noaghzil
+# @Date:   2023-04-26 00:24:54
+# @Last Modified by:   Noaghzil
+# @Last Modified time: 2023-04-26 00:54:04
+version: '3.9'
+services:
+  mysql:
+    image: mysql:latest
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: xxx
+    volumes:
+      - /Users/noaghzil/Github/dockfile_demo/mysql/conf.d/mysql.cnf:/etc/mysql/conf.d/mysql.cnf
+      - /Users/noaghzil/Github/dockfile_demo/mysql/data:/var/lib/mysql
+      - /Users/noaghzil/Github/dockfile_demo/mysql/logs:/var/log/mysql
